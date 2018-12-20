@@ -1,0 +1,23 @@
+.debug {
+    border: 1px dashed red;
+}
+.bgGray {
+    background-color: lightgray;
+}
+/* tr.table-data-row td {
+    text-align: center;
+    vertical-align: middle;
+}
+.c-bar {
+    margin: 0 auto;
+    text-align: center;
+} */
+.l-bar {
+    text-align: right !important;
+}
+.r-bar {
+    text-align: left !important;
+}
+.Result {
+    display: none;
+}

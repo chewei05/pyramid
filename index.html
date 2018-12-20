@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金字塔投資法</title>
+    <link rel="stylesheet" href="./css/spectre.min.css">
+    <link rel="stylesheet" href="./css/spectre-icons.min.css">
+    <link rel="stylesheet" href="./css/spectre-exp.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/custom.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="columns">
+          <div class="column col-xs-6">col-xs-6</div>
+          <div class="column col-xs-3">col-xs-3</div>
+          <div class="column col-xs-3">col-xs-3</div>
+        </div> -->
+
+        <div class="columns">
+          <div class="column col-xs-12">
+              <!-- form input control -->
+              <div class="form-group">
+                  <label class="form-label" for="txtInterval">*價格區間分成<small>(2~30)</small></label>
+                  <input class="form-input" type="text" id="txtInterval" placeholder="批">
+                  <label class="form-label" for="txtClosingPrice">*基準價格<small>(前日收盤價)</small></label>
+                  <input class="form-input" type="text" id="txtClosingPrice" placeholder="元">
+                  <label class="form-label" for="txtStockPriceIndex">參考指數<small>(價格所在指數)</small></label>
+                  <input class="form-input" type="text" id="txtStockPriceIndex" placeholder="點(非必填)">
+                  <label class="form-label" for="txtTimes">交易槓反<small>(例: FTE正2填2, 反1填-1)</small></label>
+                  <input class="form-input" type="text" id="txtTimes" placeholder="倍(非必填)">
+                  <label class="form-label" for="txtDayHigh">盤中最高幅度<small>(可負值)</small></label>
+                  <input class="form-input" type="text" id="txtDayHigh" placeholder="%">
+                  <label class="form-label" for="txtDayLow">盤中最低幅度<small>(可負值)</small></label>
+                  <input class="form-input" type="text" id="txtDayLow" placeholder="%">
+              </div>
+              <!-- end of form input control -->
+          </div>
+        </div>
+
+        <div class="columns">
+            <div class="column col-xs-12 bgGray d-none">
+                <!-- form radio control -->
+                <div class="form-group">
+                    <label class="form-label">套用股價升降規則</label>
+                    <label class="form-radio">
+                        <input type="radio" name="gender" checked>
+                        <i class="form-icon"></i> 無
+                    </label>
+                    <label class="form-radio">
+                        <input type="radio" name="gender">
+                        <i class="form-icon"></i> 台股
+                    </label>
+                    <label class="form-radio">
+                        <input type="radio" name="gender">
+                        <i class="form-icon"></i> 台股EFT
+                    </label>
+                </div>
+                <!-- end of form radio control -->
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column col-xs-12">
+                <div class="divider text-center" data-content="請執行"></div>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column col-xs-4">
+                <button class="btn btn-primary btn-block" id="btnCalculate">試算</button>
+            </div>
+            <div class="column col-xs-4">
+                <button class="btn btn-primary btn-block" id="btnReset">清除</button>
+            </div>
+            <div class="column col-xs-4">
+                <button class="btn btn-primary btn-block" id="btnTest">測試數據</button>
+            </div>
+        </div>
+
+        <div class="columns Result">
+            <div class="column col-xs-12">
+                <div class="divider text-center" data-content="試算結果"></div>
+            </div>
+        </div>
+
+        <div class="columns Result">
+            <div class="column col-xs-12">
+                <!-- striped tables -->
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th width="15%">漲跌幅/指數</th>
+                            <th>掛單</th>
+                            <th width="15%">數量(無法修改)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-data-row" name="table-data-row">
+                            <td>
+                                <!-- rounded labels -->
+                                <span class="label label-rounded label-secondary" name="amplitude1">*</span>
+                                <span class="label label-rounded label-primary" name="amplitude2">*</span>
+                            </td>
+                            <td>
+                                <!-- <p>14.87元</p> -->
+                                <!-- multi-bars -->
+                                <div class="center">
+                                    <div class="bar">
+                                        <div class="bar-item l-bar" style="width:15%;background:#818bd5;" name="bar2">掛單: </div>
+                                        <div class="bar-item tooltip c-bar" data-tooltip="***" style="width:20%;" name="bar1"><span name="price">***</span></div>
+                                        <div class="bar-item r-bar" style="width:15%;background:#818bd5;" name="bar3">元</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                ×1
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- end of striped tables -->
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
